@@ -17,7 +17,8 @@ Don't use it in a product environment.
     docker run -dt --restart=always --name ssh --volumes-from wiki -e TZ=America/Chicago peterhartmann/debian-ssh
     docker exec -it ssh bash
 
-getting the public key out
+Getting the public key out:
+
     docker cp wiki_ssh:/root/.ssh/id_rsa ~/.ssh/wiki_rsa && eval $(ssh-agent) && ssh-add ~/.ssh/wiki_rsa
     ssh-keygen -f "~/.ssh/known_hosts" -R wiki_rsa && ssh ssh
 
